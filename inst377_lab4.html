@@ -1,0 +1,115 @@
+<hmtl>
+    <head>
+        <title> INST377 Lab 4</title>
+        <link rel="stylesheet" href="inst377_lab4.css">
+    </head>
+
+    <body id="bgColor">
+
+        <h1 id="word">INST377 - Lab 4 </h1>
+
+        <div class="main-container">
+         
+            <aside id="left">
+
+                <!-- Box 1 - Alert Me -->
+
+                <div class="content-box">
+                    <form name="name" onsubmit="return sayHello()">
+                        <label for="firstName">Name:</label>
+                        <input type ="text" id="firstName" required>
+                        
+                        <input type="submit" value="Alert me!">
+                    </form>
+
+                        <!-- JavaScript Code -->
+                        <script type="text/javascript">
+                            function sayHello() {
+                                const firstName = document.name.firstName.value;
+                                console.log('Say hello to User:', firstName);
+                                const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/; 
+                                if (firstName.trim() === "") { // Remove any whitespace and check if empty
+                                    alert('Enter a valid first name!');
+                                    return false;
+                                }
+                                alert("Hi " + firstName + "!");
+                                return false; // Prevent form submission
+                            }
+                        </script>
+                    </div>
+
+                    <br>
+                
+                <!-- Box 2 - Validate Text -->
+                
+                <div class="content-box">
+                    <form name="text" onsubmit="return textValidation()" >
+                        <label for="text">Test Tester:</label>
+                        <input type ="text" id="text">
+                        
+                        <input type="submit" value="Validate Text">
+                    </form>
+
+                    <!-- JavaScript -->
+                    
+                    <script type="text/javascript">
+                        function textValidation() {
+                            console.log('Validating text input:',document.text.text.value)
+                            const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/; 
+
+                            if(validationRegex.test(document.text.text.value)) {
+                                alert ('How about .... nah :()');
+                                return false;
+                            }
+                        }
+                    </script>
+
+                </div>
+
+            </aside>
+
+
+            <aside id="right" >
+
+                <!-- Box 3 - Change Color -->
+                <div class="content-box">
+                    <button onclick="changeColor()">Change Color</button>
+                    <script type="text/javascript">
+                        function changeColor() {
+                            const bodyElem = document.getElementById("bgColor");
+                            console.log('Attempting to change color of body background, current color is:', bodyElem.style.backgroundColor);
+                            
+                            if(bodyElem.style.backgroundColor === 'thistle') {
+                                bodyElem.style.backgroundColor = 'plum';
+                            } else {
+                                bodyElem.style.backgroundColor = 'thistle';
+                            }
+                            
+                            console.log('Successfully changed color, new color is:', bodyElem.style.backgroundColor);
+                        }
+                    </script>
+                </div>
+
+                <br>
+
+                <!-- Box 4 - Add Text -->
+                <div class="content-box">
+                    <button onclick="addText()">Add Text</button>
+
+                    <!-- JavaScript -->
+                    <script type="text/javascript">
+                        function addText() {
+                            const headerElem = document.getElementById("word");
+                            headerElem.innerHTML += "Adding Text";
+                        }
+                    </script>
+
+
+                </div>
+
+
+
+            </aside>
+        </div>
+    </body>
+</hmtl>
