@@ -1,8 +1,6 @@
 body {
-    background-color: #edd4f6;
+    background-color: plum;
 }
-
-
 .content-box{
     background-color: rgb(117, 26, 119);
     color:white;
@@ -24,8 +22,6 @@ body {
     margin:0;
     float:right;
     width: 50%;
-   
-
 }
 
 .main-container {
