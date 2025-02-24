@@ -79,10 +79,10 @@
                             const bodyElem = document.getElementById("bgColor");
                             console.log('Attempting to change color of body background, current color is:', bodyElem.style.backgroundColor);
                             
-                            if(bodyElem.style.backgroundColor === 'plum') {
-                                bodyElem.style.backgroundColor = 'thistle';
-                            } else {
+                            if(bodyElem.style.backgroundColor === 'thistle') {
                                 bodyElem.style.backgroundColor = 'plum';
+                            } else {
+                                bodyElem.style.backgroundColor = 'thistle';
                             }
                             
                             console.log('Successfully changed color, new color is:', bodyElem.style.backgroundColor);
@@ -91,7 +91,7 @@
                 </div>
 
                 <br>
-                
+
                 <!-- Box 4 - Add Text -->
                 <div class="content-box">
                     <button onclick="addText()">Add Text</button>
