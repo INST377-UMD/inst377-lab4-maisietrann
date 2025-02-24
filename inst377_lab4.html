@@ -1,9 +1,110 @@
 <hmtl>
     <head>
         <title> INST377 Lab 4</title>
+        <link rel="stylesheet" href="inst377_lab4.css">
     </head>
 
     <body>
-        <h1>INST377 - Lab 4</h1>
+        <h1 id="word">INST377 - Lab 4 </h1>
+
+        <div class="main-container">
+         
+            <aside id="left">
+
+                <div class="content-box">
+                    <form name="name" onsubmit="return formValidation()" action="https://www.google.com">
+                        <label for="firstName">First Name:</label>
+                        <input type ="text" id="firstName" required>
+                        
+                        <input type="submit" value="Alert me!">
+                    </form>
+                </div>
+
+                
+
+                <div class="content-box">
+                    <form name="text" onsubmit="return formValidation()" action="https://www.google.com">
+                        <label for="text">Test Tester:</label>
+                        <input type ="text" id="text">
+                        
+                        <input type="submit" value="Validate Text">
+                    </form>
+
+                    <!-- JavaScript -->
+                    
+                    <script type="text/javascript">
+                        function formValidation() {
+                            console.log('Validating text input:',document.text.value)
+                            const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/; 
+
+                            if(validationRegex.test(document.text.value)) {
+                                alert ('How about .... nah :()');
+                                return false;
+                            }
+                        }
+                    </script>
+
+
+
+
+
+
+
+                </div>
+
+            </aside>
+
+
+            <aside id="right" >
+                <div class="content-box">
+
+                    <button onclick="changeColor()">Change Color</button>
+
+                    <script type="text/javascript">
+                        function changeColor() {
+                            console.log('Attempting to change color of body background ,current color is: ',document.getElementByName("body").
+                            style.color)
+                        
+                            if(document.getElementsByName("body").style.color =='red') {
+                                document.getElementByName("body").style.color ='black';
+                            } else {
+                                document.getElementByName("body").style.color = 'red';
+                            }
+            
+                            console.log('Successfully chanmged color of text, new color is ',document.getElementByName("body").
+                            style.color)
+                        }
+                    </script>
+
+                </div>
+
+                <div class="content-box">
+                    <button onclick="addText()">Add Text</button>
+
+                    <!-- JavaScript -->
+
+                    <script type="text/javascript">
+                        function addText() {
+                            console.log('Attempting to add text to header , current header is: INST377 - Lab 4 ', document.getElementById("word").
+                            style.color)
+                        
+                            if(document.getElementsById("word").style.color =='red') {
+                                document.getElementById("word").style.color ='black';
+                            } else {
+                                document.getElementById("word").style.color = 'red';
+                            }
+            
+                            console.log('Successfully chanmged color of text, new color is ',document.getElementById("word").
+                            style.color)
+                        }
+                    </script>
+
+
+                </div>
+
+
+
+            </aside>
+        </div>
     </body>
 </hmtl>
